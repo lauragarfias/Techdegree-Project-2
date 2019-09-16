@@ -12,11 +12,13 @@ const pageItems =  10;
 const showPage = (list, page) => {
    const startIndex = (page * parseInt(pageItems)) - parseInt(pageItems)
    const endIndex = page * parseInt(pageItems)
-   for(let i = 0; i >= startIndex && i <= endIndex; i ++) {
-      return studentList[i];
+   for(let i = 0; i <= studentList.length; i ++) {
+      if(i >= startIndex && i <= endIndex){
+         return studentList[i];
+      }
    }
 }
-showPage(studentList, 1);
+console.log(showPage(studentList, 1));
 //Generate, append, and add functionality to the pagination buttons.
 
 /***
