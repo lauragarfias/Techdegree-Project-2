@@ -10,8 +10,8 @@ const pageItems =  10;
 //Hide all of the items in the list except for the ten I want to show.
 
 const showPage = (list, page) => {
-   const startIndex = (page * parseInt(pageItems)) - parseInt(pageItems)
-   const endIndex = page * parseInt(pageItems)
+   const startIndex = (page * pageItems) - pageItems
+   const endIndex = page * pageItems
    for(let i = 0; i <= studentList.length; i ++) {
       if(i >= startIndex && i <= endIndex){
          return studentList[i];
