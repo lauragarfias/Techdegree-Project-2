@@ -23,6 +23,11 @@ const showPage = (list, page) => {
 
 //Generate, append, and add functionality to the pagination buttons.
 
+/**
+ If you console log link then you can see that the value goes from 1 to 6 so the value is always changing and will be 6 due to which your if(link.textContent === 1) will never work.
+ One way to get around this is to create array for all your list and a.
+ **/
+
 const appendPageLinks = (list) => {
    const parentDiv = document.querySelector('.page');
    const div = document.createElement('div');
@@ -33,26 +38,27 @@ const appendPageLinks = (list) => {
    const page = list.length/pageItems;
 
    for(let i = 0; i < page; i ++) {
-      const li = document.createElement('li');
-      ul.appendChild(li);
-      const link = document.createElement('a');
-      link.href = '#';
-      const text = i + 1
-      link.textContent = text
-      li.appendChild(link);
-      if(link.textContent === 1) {
-         link.className = 'active';
+      const li = [];
+      li[i] = document.createElement('li');
+      ul.appendChild(li[i]);
+      const link = [];
+      link[i] = document.createElement('a');
+      link[i].href = '#';
+      const text = i + 1;
+      link[i].textContent = text;
+      li[i].appendChild(link[i]);
+      if(i === 0) {
+         link[i].className = 'active';
       }
-
-      link.addEventListener('click', (e) => {
-         const allLinks = document.getElementsByTagName('a');
+      
+      parentDiv.addEventListener('click', (e) => {
          const clicked = event.target;
-         if(clicked) {
-            showPage(list, link.textContent);
-            clicked.className = 'active';
+         for(let i = 0; i <= link.length; i ++) {
+            link[i].classList.remove('active');
          }
-         for(let i = 0; i <= allLinks.length; i ++) {
-            link.textContent[i].classList.remove('active');
+         if(clicked) {
+            clicked.className = 'active';
+            showPage(list, link[i].textContent);
          }
       })
    }
