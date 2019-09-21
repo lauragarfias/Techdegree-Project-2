@@ -43,17 +43,19 @@ const appendPageLinks = (list) => {
       if(link.textContent === 1) {
          link.className = 'active';
       }
+
+      link.addEventListener('click', (e) => {
+         const allLinks = document.getElementsByTagName('a');
+         const clicked = event.target;
+         if(clicked) {
+            showPage(list, link.textContent);
+            clicked.className = 'active';
+         }
+         for(let i = 0; i <= allLinks.length; i ++) {
+            link.textContent[i].classList.remove('active');
+         }
+      })
    }
-   
-   link.addEventListener('click', (e) => {
-      const allLinks = document.getElementsByTagName('a');
-      const clicked = event.target;
-      for(let i = 0; i <= allLinks.length; i ++) {
-         link.textContent[i].classList.remove('active');
-      }
-      clicked.className = 'active';
-      showPage(list, link.textContent);
-   })
    
 }
 
