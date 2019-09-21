@@ -12,9 +12,11 @@ const pageItems =  10;
 const showPage = (list, page) => {
    const endIndex = (page * pageItems) - 1;
    const startIndex = endIndex - 9;
-   for(let i = 0; i <= studentList.length; i ++) {
+   for(let i = 0; i <= list.length; i ++) {
       if(i >= startIndex && i <= endIndex){
-         document.write(studentList[i]);
+         list[i].style.display = '';
+      } else {
+         list[i].style.display = 'none';
       }
    }
 }
