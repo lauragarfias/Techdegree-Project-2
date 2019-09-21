@@ -50,7 +50,7 @@ const appendPageLinks = (list) => {
             link.textContent[i].classList.remove('active');
          }
          clicked.className = 'active';
-         showPage(studentList, link.textContent);
+         showPage(list, link.textContent);
       })
    }
 }
