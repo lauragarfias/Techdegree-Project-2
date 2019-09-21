@@ -23,11 +23,6 @@ const showPage = (list, page) => {
 
 //Generate, append, and add functionality to the pagination buttons.
 
-/**
- If you console log link then you can see that the value goes from 1 to 6 so the value is always changing and will be 6 due to which your if(link.textContent === 1) will never work.
- One way to get around this is to create array for all your list and a.
- **/
-
 const appendPageLinks = (list) => {
    const parentDiv = document.querySelector('.page');
    const div = document.createElement('div');
