@@ -31,12 +31,12 @@ const appendPageLinks = (list) => {
    const ul = document.createElement('ul');
    div.appendChild(ul);
    const page = list.length/pageItems;
+   const li = [];
+   const link = [];
 
    for(let i = 0; i < page; i ++) {
-      const li = [];
       li[i] = document.createElement('li');
       ul.appendChild(li[i]);
-      const link = [];
       link[i] = document.createElement('a');
       link[i].href = '#';
       const text = i + 1;
