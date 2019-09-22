@@ -12,7 +12,7 @@ const pageItems =  10;
 const showPage = (list, page) => {
    const endIndex = (page * pageItems) - 1;
    const startIndex = endIndex - 9;
-   for(let i = 0; i <= list.length; i ++) {
+   for(let i = 0; i < list.length; i ++) {
       if(i >= startIndex && i <= endIndex){
          list[i].style.display = '';
       } else {
@@ -46,7 +46,7 @@ const appendPageLinks = (list) => {
          link[i].className = 'active';
       }
       
-      parentDiv.addEventListener('click', (e) => {
+      ul.addEventListener('click', (e) => {
          const clicked = event.target;
          for(let i = 0; i <= link.length; i ++) {
             link[i].classList.remove('active');
