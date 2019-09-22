@@ -48,16 +48,17 @@ const appendPageLinks = (list) => {
       
       ul.addEventListener('click', (e) => {
          const clicked = event.target;
-         for(let i = 0; i <= link.length; i ++) {
+         for(let i = 0; i < link.length; i ++) {
             link[i].classList.remove('active');
          }
          if(clicked) {
             clicked.className = 'active';
-            showPage(list, link[i].textContent);
+            showPage(list, clicked.textContent);
          }
       })
    }
    
 }
 
+showPage(studentList, clicked.textContent);
 appendPageLinks(studentList);
