@@ -4,7 +4,7 @@ FSJS project 2 - List Filter and Pagination
 ******************************************/
 
 //Global variables
-let studentList = document.getElementsByTagName('li');
+let studentList = document.getElementsByClassName('student-item');
 const pageItems =  10;
 
 //Hide all of the items in the list except for the ten I want to show.
@@ -60,5 +60,5 @@ const appendPageLinks = (list) => {
    
 }
 
-showPage(studentList, clicked.textContent);
+showPage(studentList, 1);
 appendPageLinks(studentList);
